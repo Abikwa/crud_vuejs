@@ -20,5 +20,5 @@ use App\Http\Controllers\ProductController;
 // });
 
 Route::middleware('api')->group(function () {
-    Route::rsources('products', ProductController::class);
+    Route::resource('products', ProductController::class);
 });
