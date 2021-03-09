@@ -14,5 +14,6 @@
         <!-- Custom styles for this template --> 
     <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" />
     @yield('css')
 </head>
