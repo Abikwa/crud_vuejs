@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home/index');
-});
+
 
 Route::get('{any}', function () {
-    return view('app');
+    return view('templates/default');
 })->where('any', '.*');
