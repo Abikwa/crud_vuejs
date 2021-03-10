@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="text-center">Products List</h2>
+        <h2 class="text-center">Products </h2>
  
         <table class="table">
             <thead>
@@ -19,7 +19,7 @@
                 <td>
                     <div class="btn-group" role="group">
                         <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link>
-                        <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button>
+                        <button class="btn btn-danger" @click="deleteProduct(product.id)">Dele</button>
                     </div>
                 </td>
             </tr>
