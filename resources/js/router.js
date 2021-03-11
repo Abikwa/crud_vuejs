@@ -1,15 +1,13 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
 
 import Home from './pages/Home.vue';
 import About from './pages/About.vue';
 
-Vue.use(VueRouter);
+import AllCar from './components/cars/All.vue';
+import CreateCar from './components/cars/Create.vue';
+import EditCar from './components/cars/Edit.vue';
 
-const router = new VueRouter({
-    mode: 'history',
-    linkExactActiveClass: 'active',
-    routes: [
+
+export const routes = [
         {
             path: '/',
             name: 'home',
@@ -20,7 +18,21 @@ const router = new VueRouter({
             name: 'about',
             component : About,
         },
-    ]
-});
 
-export default router;
+        {
+            name: 'allcar',
+            path: '/cars',
+            component: AllCar
+        },
+        {
+            name: 'create',
+            path: '/cars/create',
+            component: CreateCar
+        },
+        {
+            name: 'edit',
+            path: '/cars/edit/:id',
+            component: EditCar
+        }
+
+    ];
