@@ -4,6 +4,9 @@
         <div class="row">
             <div class="col-md-6">
                 <form @submit.prevent="addCar">
+                <div class="alert alert-danger" v-if="errors && errors.mark">
+                    {{ errors.mark[0] }}
+                </div>
                     <div class="form-group">
                         <label>Plaque</label>
                         <input type="text" class="form-control" v-model="car.plaque">
@@ -14,6 +17,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </form>
+
             </div>
         </div>
     </div>
@@ -23,7 +27,8 @@
     export default {
         data() {
             return {
-                car: {}
+                car: {},
+                errors: {},
             }
         },
         methods: {
@@ -33,7 +38,13 @@
                     .then(response => (
                         this.$router.push({ name: 'allcar' })
                     ))
-                    .catch(err => console.log(err))
+                    .catch(
+                            error => {
+                            if (error.response.status == 422) {
+                                this.errors = error.response.data.errors;
+                            }
+                            console.log(error);
+                        })
                     .finally(() => this.loading = false)
             }
         }
