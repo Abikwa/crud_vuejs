@@ -6,15 +6,15 @@
                 <tr>
                     <th>#</th>
                     <th>Plaque</th>
-                    <th>Model</th>
+                    <th>mark</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                     <tr v-for="car in cars" :key="car.id">
-                        <td scope="row">{{ loop.iteration }}</td>
-                        <td>{{ car.plate }}</td>
-                        <td>{{ car.model }}</td>
+                        <td>{{ car.id}}</td>
+                        <td>{{ car.plaque }}</td>
+                        <td>{{ car.mark }}</td>
                         <td>
                             <router-link :to="{name: 'edit', params: { id: car.id }}" class="btn btn-success">Edit</router-link>
                             <button class="btn btn-danger" @click="deleteCar(car.id)">Delete</button>
