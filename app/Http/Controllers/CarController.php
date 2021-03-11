@@ -36,12 +36,8 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        $car = new Car([
-            'plaque' => $request->input['plaque'],
-            'mark' => $request->input['mark'],
-        ]);
-        $car->save();
-        return response()->join('car added');
+        $request->validate(['plaque'=>'required', 'mark'=>'required|unique:cars']);
+        Car::create($request->all());
     }
 
     /**
