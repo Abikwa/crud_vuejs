@@ -41,7 +41,7 @@ class CarController extends Controller
             'mark' => $request->input['mark'],
         ]);
         $car->save();
-        return response()->join('car product');
+        return response()->join('car added');
     }
 
     /**
@@ -73,7 +73,7 @@ class CarController extends Controller
      * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Car $car)
+    public function update( Car $car, Request $request)
     {
         $car->update($request->all());
     }
