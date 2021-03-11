@@ -1969,10 +1969,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      car: {}
+      car: {},
+      errors: {}
     };
   },
   methods: {
@@ -1983,8 +1989,12 @@ __webpack_require__.r(__webpack_exports__);
         return _this.$router.push({
           name: 'allcar'
         });
-      })["catch"](function (err) {
-        return console.log(err);
+      })["catch"](function (error) {
+        if (error.response.status == 422) {
+          _this.errors = error.response.data.errors;
+        }
+
+        console.log(error);
       })["finally"](function () {
         return _this.loading = false;
       });
@@ -38469,7 +38479,17 @@ var render = function() {
               [_vm._v("Create")]
             )
           ]
-        )
+        ),
+        _vm._v(" "),
+        _vm.errors && _vm.errors.mark
+          ? _c("div", { staticClass: "alert alert-danger" }, [
+              _vm._v(
+                "\n                " +
+                  _vm._s(_vm.errors.mark[0]) +
+                  "\n            "
+              )
+            ])
+          : _vm._e()
       ])
     ])
   ])
@@ -38508,7 +38528,7 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.addCar($event)
+                return _vm.updateCar($event)
               }
             }
           },
@@ -38568,7 +38588,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Create")]
+              [_vm._v("update")]
             )
           ]
         )
