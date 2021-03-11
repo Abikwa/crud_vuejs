@@ -1,7 +1,7 @@
 <template>
-    <div>
-
-        <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 shadow" style="background-color: #d16966;">
+    <div class="mt-0">
+    
+        <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 shadow mt-0" style="background-color: #d16966;">
             <span class="h4 text-white">App</span>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
                 data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background-color: #3f2e2c;">
                     <div class="sidebar-sticky pt-3">
                         <ul class="nav flex-column ">
-                            <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
+                            <li class="nav-item">
                                 <router-link
                                             class="nav-link"
                                             data-toggle="collapse"
@@ -28,7 +28,7 @@
                                 </router-link>
                             </li>
                             
-                            <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
+                            <li class="nav-item">
                                 <router-link
                                             class="nav-link"
                                             data-toggle="collapse"
@@ -37,12 +37,20 @@
                                     <span data-feather="biefcase"></span> About
                                 </router-link>
                             </li>
+
+                            <li class="nav-item">
+                                <router-link to="/cars" class="nav-item nav-link">Cars</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link to="/cars/create" class="nav-item nav-link">New cars</router-link>
+                            </li>
                             
                         </ul>
                     </div>
                 </nav>
-
-                <router-view></router-view>
+                <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                    <router-view></router-view>
+                </div>
 
             </div>
         </div>
@@ -52,10 +60,6 @@
 
 <script>
 export default {
-    watch: {
-        $route() {
-            $("#navbarCollapse").collapse("hide");
-        },
-    },
+  
 };
 </script>
