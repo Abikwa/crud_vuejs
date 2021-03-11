@@ -12,7 +12,7 @@
                         <label>mark</label>
                         <input type="text" class="form-control" v-model="car.mark">
                     </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">update</button>
                 </form>
             </div>
         </div>
