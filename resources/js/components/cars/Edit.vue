@@ -3,7 +3,7 @@
         <h3 class="text-center">Create car</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="addCar">
+                <form @submit.prevent="updateCar">
                     <div class="form-group">
                         <label>Plaque</label>
                         <input type="text" class="form-control" v-model="car.plaque">
