@@ -1973,7 +1973,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -38421,6 +38420,16 @@ var render = function() {
             }
           },
           [
+            _vm.errors && _vm.errors.mark
+              ? _c("div", { staticClass: "alert alert-danger" }, [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.errors.mark[0]) +
+                      "\n            "
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
               _c("label", [_vm._v("Plaque")]),
               _vm._v(" "),
@@ -38479,17 +38488,7 @@ var render = function() {
               [_vm._v("Create")]
             )
           ]
-        ),
-        _vm._v(" "),
-        _vm.errors && _vm.errors.mark
-          ? _c("div", { staticClass: "alert alert-danger" }, [
-              _vm._v(
-                "\n                " +
-                  _vm._s(_vm.errors.mark[0]) +
-                  "\n            "
-              )
-            ])
-          : _vm._e()
+        )
       ])
     ])
   ])
