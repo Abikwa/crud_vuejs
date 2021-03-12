@@ -1,4 +1,4 @@
-@extends('templates.default')
+@extends('layout.default')
 @section('content')
     
 @endsection
