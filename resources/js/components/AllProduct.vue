@@ -1,25 +1,25 @@
 <template>
     <div>
-        <h2 class="text-center">Products </h2>
+        <h2 class="text-center">Marks </h2>
  
         <table class="table">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
+                <th>Name mark</th>
                 <th>Detail</th>
                 <!-- <th>Actions</th> -->
             </tr>
             </thead>
             <tbody>
-            <tr v-for="product in products" :key="product.id">
-                <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.detail }}</td>
+            <tr v-for="mark in marks" :key="mark.id">
+                <td>{{ mark.id }}</td>
+                <td>{{ mark.name }}</td>
+                <td>{{ mark.detail }}</td>
                 <td>
                     <div class="btn-group" role="group">
-                        <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link>
-                        <button class="btn btn-danger" @click="deleteProduct(product.id)">Dele</button>
+                        <router-link :to="{name: 'edit', params: { id: mark.id }}" class="btn btn-success">Edit</router-link>
+                        <button class="btn btn-danger" @click="deletemark(mark.id)">Dele</button>
                     </div>
                 </td>
             </tr>
@@ -32,23 +32,23 @@
     export default {
         data() {
             return {
-                products: []
+                marks: []
             }
         },
         created() {
             this.axios
-                .get('http://localhost:8000/api/products/')
+                .get('http://localhost:8000/api/marks/')
                 .then(response => {
-                    this.products = response.data;
+                    this.marks = response.data;
                 });
         },
         methods: {
-            deleteProduct(id) { 
+            deletemark(id) { 
                 this.axios
-                    .delete(`http://localhost:8000/api/products/${id}`)
+                    .delete(`http://localhost:8000/api/marks/${id}`)
                     .then(response => {
-                        let i = this.products.map(data => data.id).indexOf(id);
-                        this.products.splice(i, 1)
+                        let i = this.marks.map(data => data.id).indexOf(id);
+                        this.marks.splice(i, 1)
                     });
             }
         }
