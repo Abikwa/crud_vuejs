@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="text-center">Cars List</h2>
+        <h2 class="text-center">Cars </h2>
         <table class="table table-striped table-inverse table-responsive">
             <thead class="thead-inverse">
                 <tr>
