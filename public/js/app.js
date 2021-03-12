@@ -38311,7 +38311,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "text-center" }, [_vm._v("Cars List")]),
+    _c("h2", { staticClass: "text-center" }, [_vm._v("Cars ")]),
     _vm._v(" "),
     _c(
       "table",
