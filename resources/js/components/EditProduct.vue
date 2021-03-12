@@ -1,16 +1,16 @@
 <template>
     <div>
-        <h3 class="text-center">Edit Product</h3>
+        <h3 class="text-center">Edit mark</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="updateProduct">
+                <form @submit.prevent="updatemark">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" v-model="product.name">
+                        <input type="text" class="form-control" v-model="mark.name">
                     </div>
                     <div class="form-group">
                         <label>Detail</label>
-                        <input type="text" class="form-control" v-model="product.detail">
+                        <input type="text" class="form-control" v-model="mark.detail">
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
@@ -23,20 +23,20 @@
     export default {
         data() {
             return {
-                product: {}
+                mark: {}
             }
         },
         created() {
             this.axios
-                .get(`http://localhost:8000/api/products/${this.$route.params.id}`)
+                .get(`http://localhost:8000/api/marks/${this.$route.params.id}`)
                 .then((res) => {
-                    this.product = res.data;
+                    this.mark = res.data;
                 });
         },
         methods: {
-            updateProduct() {
+            updatemark() {
                 this.axios
-                    .patch(`http://localhost:8000/api/products/${this.$route.params.id}`, this.product)
+                    .patch(`http://localhost:8000/api/marks/${this.$route.params.id}`, this.mark)
                     .then((res) => {
                         this.$router.push({ name: 'home' });
                     });
