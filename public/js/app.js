@@ -1878,26 +1878,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      products: []
+      marks: []
     };
   },
   created: function created() {
     var _this = this;
 
-    this.axios.get('http://localhost:8000/api/products/').then(function (response) {
-      _this.products = response.data;
+    this.axios.get('http://localhost:8000/api/marks/').then(function (response) {
+      _this.marks = response.data;
     });
   },
   methods: {
-    deleteProduct: function deleteProduct(id) {
+    deletemark: function deletemark(id) {
       var _this2 = this;
 
-      this.axios["delete"]("http://localhost:8000/api/products/".concat(id)).then(function (response) {
-        var i = _this2.products.map(function (data) {
+      this.axios["delete"]("http://localhost:8000/api/marks/".concat(id)).then(function (response) {
+        var i = _this2.marks.map(function (data) {
           return data.id;
         }).indexOf(id);
 
-        _this2.products.splice(i, 1);
+        _this2.marks.splice(i, 1);
       });
     }
   }
@@ -1976,14 +1976,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      product: {}
+      mark: {}
     };
   },
   methods: {
-    addProduct: function addProduct() {
+    addmark: function addmark() {
       var _this = this;
 
-      this.axios.post('http://localhost:8000/api/products', this.product).then(function (response) {
+      this.axios.post('http://localhost:8000/api/marks', this.mark).then(function (response) {
         return _this.$router.push({
           name: 'home'
         });
@@ -2033,21 +2033,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      product: {}
+      mark: {}
     };
   },
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://localhost:8000/api/products/".concat(this.$route.params.id)).then(function (res) {
-      _this.product = res.data;
+    this.axios.get("http://localhost:8000/api/marks/".concat(this.$route.params.id)).then(function (res) {
+      _this.mark = res.data;
     });
   },
   methods: {
-    updateProduct: function updateProduct() {
+    updatemark: function updatemark() {
       var _this2 = this;
 
-      this.axios.patch("http://localhost:8000/api/products/".concat(this.$route.params.id), this.product).then(function (res) {
+      this.axios.patch("http://localhost:8000/api/marks/".concat(this.$route.params.id), this.mark).then(function (res) {
         _this2.$router.push({
           name: 'home'
         });
@@ -2182,15 +2182,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [{
   name: 'home',
-  path: '/',
+  path: '/marks',
   component: _components_AllProduct_vue__WEBPACK_IMPORTED_MODULE_0__.default
 }, {
   name: 'create',
-  path: '/create',
+  path: '/marks/create',
   component: _components_CreateProduct_vue__WEBPACK_IMPORTED_MODULE_1__.default
 }, {
   name: 'edit',
-  path: '/edit/:id',
+  path: '/marks/edit/:id',
   component: _components_EditProduct_vue__WEBPACK_IMPORTED_MODULE_2__.default
 }];
 
@@ -37897,20 +37897,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "text-center" }, [_vm._v("Products ")]),
+    _c("h2", { staticClass: "text-center" }, [_vm._v("Marks ")]),
     _vm._v(" "),
     _c("table", { staticClass: "table" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.products, function(product) {
-          return _c("tr", { key: product.id }, [
-            _c("td", [_vm._v(_vm._s(product.id))]),
+        _vm._l(_vm.marks, function(mark) {
+          return _c("tr", { key: mark.id }, [
+            _c("td", [_vm._v(_vm._s(mark.id))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(product.name))]),
+            _c("td", [_vm._v(_vm._s(mark.name))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(product.detail))]),
+            _c("td", [_vm._v(_vm._s(mark.detail))]),
             _vm._v(" "),
             _c("td", [
               _c(
@@ -37921,9 +37921,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-success",
-                      attrs: {
-                        to: { name: "edit", params: { id: product.id } }
-                      }
+                      attrs: { to: { name: "edit", params: { id: mark.id } } }
                     },
                     [_vm._v("Edit")]
                   ),
@@ -37934,7 +37932,7 @@ var render = function() {
                       staticClass: "btn btn-danger",
                       on: {
                         click: function($event) {
-                          return _vm.deleteProduct(product.id)
+                          return _vm.deletemark(mark.id)
                         }
                       }
                     },
@@ -37960,7 +37958,7 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("ID")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
+        _c("th", [_vm._v("Name mark")]),
         _vm._v(" "),
         _c("th", [_vm._v("Detail")])
       ])
@@ -38004,17 +38002,17 @@ var render = function() {
               [
                 _c(
                   "router-link",
-                  { staticClass: "nav-item nav-link", attrs: { to: "/" } },
-                  [_vm._v("Products List")]
+                  { staticClass: "nav-item nav-link", attrs: { to: "/marks" } },
+                  [_vm._v("Marks")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "nav-item nav-link",
-                    attrs: { to: "/create" }
+                    attrs: { to: "/marks/create" }
                   },
-                  [_vm._v("Create Product")]
+                  [_vm._v("New Mark")]
                 )
               ],
               1
@@ -38052,7 +38050,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Create Product")]),
+    _c("h3", { staticClass: "text-center" }, [_vm._v("Create mark")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
@@ -38062,7 +38060,7 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.addProduct($event)
+                return _vm.addmark($event)
               }
             }
           },
@@ -38075,19 +38073,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.product.name,
-                    expression: "product.name"
+                    value: _vm.mark.name,
+                    expression: "mark.name"
                   }
                 ],
                 staticClass: "form-control",
                 attrs: { type: "text" },
-                domProps: { value: _vm.product.name },
+                domProps: { value: _vm.mark.name },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.product, "name", $event.target.value)
+                    _vm.$set(_vm.mark, "name", $event.target.value)
                   }
                 }
               })
@@ -38101,19 +38099,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.product.detail,
-                    expression: "product.detail"
+                    value: _vm.mark.detail,
+                    expression: "mark.detail"
                   }
                 ],
                 staticClass: "form-control",
                 attrs: { type: "text" },
-                domProps: { value: _vm.product.detail },
+                domProps: { value: _vm.mark.detail },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.product, "detail", $event.target.value)
+                    _vm.$set(_vm.mark, "detail", $event.target.value)
                   }
                 }
               })
@@ -38154,7 +38152,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Edit Product")]),
+    _c("h3", { staticClass: "text-center" }, [_vm._v("Edit mark")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
@@ -38164,7 +38162,7 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.updateProduct($event)
+                return _vm.updatemark($event)
               }
             }
           },
@@ -38177,19 +38175,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.product.name,
-                    expression: "product.name"
+                    value: _vm.mark.name,
+                    expression: "mark.name"
                   }
                 ],
                 staticClass: "form-control",
                 attrs: { type: "text" },
-                domProps: { value: _vm.product.name },
+                domProps: { value: _vm.mark.name },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.product, "name", $event.target.value)
+                    _vm.$set(_vm.mark, "name", $event.target.value)
                   }
                 }
               })
@@ -38203,19 +38201,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.product.detail,
-                    expression: "product.detail"
+                    value: _vm.mark.detail,
+                    expression: "mark.detail"
                   }
                 ],
                 staticClass: "form-control",
                 attrs: { type: "text" },
-                domProps: { value: _vm.product.detail },
+                domProps: { value: _vm.mark.detail },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.product, "detail", $event.target.value)
+                    _vm.$set(_vm.mark, "detail", $event.target.value)
                   }
                 }
               })
