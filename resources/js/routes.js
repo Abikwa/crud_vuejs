@@ -5,17 +5,17 @@ import EditProduct from './components/EditProduct.vue';
 export const routes = [
     {
         name: 'home',
-        path: '/',
+        path: '/marks',
         component: AllProduct
     },
     {
         name: 'create',
-        path: '/create',
+        path: '/marks/create',
         component: CreateProduct
     },
     {
         name: 'edit',
-        path: '/edit/:id',
+        path: '/marks/edit/:id',
         component: EditProduct
     }
 ];
