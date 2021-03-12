@@ -1,16 +1,16 @@
 <template>
     <div>
-        <h3 class="text-center">Create Product</h3>
+        <h3 class="text-center">Create mark</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="addProduct">
+                <form @submit.prevent="addmark">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" v-model="product.name">
+                        <input type="text" class="form-control" v-model="mark.name">
                     </div>
                     <div class="form-group">
                         <label>Detail</label>
-                        <input type="text" class="form-control" v-model="product.detail">
+                        <input type="text" class="form-control" v-model="mark.detail">
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </form>
@@ -23,13 +23,13 @@
     export default {
         data() {
             return {
-                product: {}
+                mark: {}
             }
         },
         methods: {
-            addProduct() {
+            addmark() {
                 this.axios
-                    .post('http://localhost:8000/api/products', this.product)
+                    .post('http://localhost:8000/api/marks', this.mark)
                     .then(response => (
                         this.$router.push({ name: 'home' })
                     ))
