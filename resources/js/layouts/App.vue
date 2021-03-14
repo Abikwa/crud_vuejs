@@ -39,12 +39,19 @@
                             </li>
 
                             <li class="nav-item">
-                                <router-link to="/cars" class="nav-item nav-link">Cars</router-link>
+                                <router-link to="/marks" class="nav-item nav-link">Marks</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/cars/create" class="nav-item nav-link">New cars</router-link>
+                                <router-link to="/marks/create" class="nav-item nav-link">New marks</router-link>
                             </li>
                             
+                            <li class="nav-item">
+                                <router-link to="/models" class="nav-item nav-link">Models</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link to="/models/create" class="nav-item nav-link">New model</router-link>
+                            </li>
+
                         </ul>
                     </div>
                 </nav>
