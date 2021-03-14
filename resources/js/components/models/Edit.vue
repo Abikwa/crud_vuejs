@@ -1,16 +1,16 @@
 <template>
     <div>
-        <h3 class="text-center">Create car</h3>
+        <h3 class="text-center">Create model</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="updateCar">
+                <form @submit.prevent="updateModel">
                     <div class="form-group">
                         <label>Plaque</label>
-                        <input type="text" class="form-control" v-model="car.plaque">
+                        <input type="text" class="form-control" v-model="model.plaque">
                     </div>
                     <div class="form-group">
                         <label>mark</label>
-                        <input type="text" class="form-control" v-model="car.mark">
+                        <input type="text" class="form-control" v-model="model.mark">
                     </div>
                     <button type="submit" class="btn btn-primary">update</button>
                 </form>
@@ -23,22 +23,22 @@
     export default {
         data() {
             return {
-                car: {}
+                model: {}
             }
         },
         created() {
             this.axios
-                .get(`http://localhost:8000/api/cars/${this.$route.params.id}`)
+                .get(`http://localhost:8000/api/models/${this.$route.params.id}`)
                 .then((res) => {
-                    this.car = res.data;
+                    this.model = res.data;
                 });
         },
         methods: {
-            updateCar() {
+            updateModel() {
                 this.axios
-                    .patch(`http://localhost:8000/api/cars/${this.$route.params.id}`, this.car)
+                    .patch(`http://localhost:8000/api/models/${this.$route.params.id}`, this.model)
                     .then((res) => {
-                        this.$router.push({ name: 'allcar' });
+                        this.$router.push({ name: 'models' });
                     });
             }
         }

@@ -18,7 +18,7 @@
                 <td>{{ mark.detail }}</td>
                 <td>
                     <div class="btn-group" role="group">
-                        <router-link :to="{name: 'edit', params: { id: mark.id }}" class="btn btn-success">Edit</router-link>
+                        <router-link :to="{name: 'marks-edit', params: { id: mark.id }}" class="btn btn-success">Edit</router-link>
                         <button class="btn btn-danger" @click="deletemark(mark.id)">Dele</button>
                     </div>
                 </td>

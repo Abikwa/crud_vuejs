@@ -6,17 +6,7 @@
 <!-- End Of Head -->
 
 <body>
-    <!-- Navbar -->
-    @include('partials.navbar')
-    <!-- End Of Navbar -->
-    <div class="container-fluid">
-        <div class="row">
-
-            <!-- Main Content  -->  
-            <div id="app"></div>
-            <!-- End Of Main Content -->
-        </div>
-    </div>
+   <div id="app"></div>
     <script src="{{ asset('js/jquery.min.js') }}"></script> 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>

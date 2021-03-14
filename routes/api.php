@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarkController;
-use App\Http\Controllers\CarController;
+use App\Http\Controllers\ModelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +22,5 @@ use App\Http\Controllers\CarController;
 
 Route::middleware('api')->group(function () {
     Route::resource('marks', MarkController::class);
-    Route::resource('cars', CarController::class);
+    Route::resource('models', ModelController::class);
 });

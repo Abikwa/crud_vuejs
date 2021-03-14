@@ -1,19 +1,19 @@
 <template>
     <div>
-        <h3 class="text-center">Create car</h3>
+        <h3 class="text-center">Create model</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="addCar">
+                <form @submit.prevent="addModel">
                 <div class="alert alert-danger" v-if="errors && errors.mark">
                     {{ errors.mark[0] }}
                 </div>
                     <div class="form-group">
                         <label>Plaque</label>
-                        <input type="text" class="form-control" v-model="car.plaque">
+                        <input type="text" class="form-control" v-model="model.plaque">
                     </div>
                     <div class="form-group">
                         <label>mark</label>
-                        <input type="text" class="form-control" v-model="car.mark">
+                        <input type="text" class="form-control" v-model="model.mark">
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </form>
@@ -27,16 +27,16 @@
     export default {
         data() {
             return {
-                car: {},
+                model: {},
                 errors: {},
             }
         },
         methods: {
-            addCar() {
+            addModel() {
                 this.axios
-                    .post('http://localhost:8000/api/cars', this.car)
+                    .post('http://localhost:8000/api/models', this.model)
                     .then(response => (
-                        this.$router.push({ name: 'allcar' })
+                        this.$router.push({ name: 'models' })
                     ))
                     .catch(
                             error => {

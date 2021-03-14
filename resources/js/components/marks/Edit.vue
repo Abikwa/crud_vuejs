@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h3 class="text-center">Create mark</h3>
+        <h3 class="text-center">Edit mark</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="addmark">
+                <form @submit.prevent="updatemark">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" class="form-control" v-model="mark.name">
@@ -12,7 +12,7 @@
                         <label>Detail</label>
                         <input type="text" class="form-control" v-model="mark.detail">
                     </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>
@@ -26,15 +26,20 @@
                 mark: {}
             }
         },
+        created() {
+            this.axios
+                .get(`http://localhost:8000/api/marks/${this.$route.params.id}`)
+                .then((res) => {
+                    this.mark = res.data;
+                });
+        },
         methods: {
-            addmark() {
+            updatemark() {
                 this.axios
-                    .post('http://localhost:8000/api/marks', this.mark)
-                    .then(response => (
-                        this.$router.push({ name: 'home' })
-                    ))
-                    .catch(err => console.log(err))
-                    .finally(() => this.loading = false)
+                    .patch(`http://localhost:8000/api/marks/${this.$route.params.id}`, this.mark)
+                    .then((res) => {
+                        this.$router.push({ name: 'marks' });
+                    });
             }
         }
     }

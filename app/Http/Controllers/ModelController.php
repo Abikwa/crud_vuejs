@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Car;
+use App\Models\Modele;
 use Illuminate\Http\Request;
 
-class CarController extends Controller
+class ModelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = Car::all()->toArray();
-        return array_reverse($cars);
+        $models = Modele::all()->toArray();
+        return array_reverse($models);
     }
 
     /**
@@ -36,28 +36,28 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['plaque'=>'required', 'mark'=>'required|unique:cars']);
-        Car::create($request->all());
+        $request->validate(['plaque'=>'required', 'mark'=>'required|unique:Modeles']);
+        Modele::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Car  $car
+     * @param  \App\Models\Modele  $model
      * @return \Illuminate\Http\Response
      */
-    public function show(Car $car)
+    public function show(Modele $model)
     {
-        return response()->json($car);
+        return response()->json($model);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Car  $car
+     * @param  \App\Models\Modele  $model
      * @return \Illuminate\Http\Response
      */
-    public function edit(Car $car)
+    public function edit(Modele $model)
     {
         //
     }
@@ -66,23 +66,23 @@ class CarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Car  $car
+     * @param  \App\Models\Modele  $model
      * @return \Illuminate\Http\Response
      */
-    public function update( Car $car, Request $request)
+    public function update( Modele $model, Request $request)
     {
-        $car->update($request->all());
+        $model->update($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Car  $car
+     * @param  \App\Models\Modele  $model
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Car $car)
+    public function destroy(Modele $model)
     {
-        $car->delete();
-        return response()->json('car deleted');
+        $model->delete();
+        return response()->json('Modele deleted');
     }
 }
