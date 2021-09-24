@@ -1,21 +1,21 @@
 <template>
     <div class="mt-0">
     
-        <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 shadow mt-0" style="background-color: #d16966;">
-            <span class="h4 text-white">App</span>
+        <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 shadow mt-0" style="background-color: rgb(0, 0, 125);">
+            <span class="h4 text-white">App vue js create</span>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
                 data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
             </button>
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
-                    <span class="nav-link text-white" href=""><i></i> Abibi</span>
+                    <span class="nav-link text-white font-bold" href=""><i></i> Abibi Bat</span>
                 </li>
             </ul>
         </nav>
         <div class="container-fluid">
             <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background-color: #3f2e2c;">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background:rgb(0, 0, 165)">
                     <div class="sidebar-sticky pt-3">
                         <ul class="nav flex-column ">
                             <li class="nav-item">
@@ -28,7 +28,7 @@
                                 </router-link>
                             </li>
                             
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <router-link
                                             class="nav-link"
                                             data-toggle="collapse"
@@ -36,7 +36,7 @@
                                             >
                                     <span data-feather="biefcase"></span> About
                                 </router-link>
-                            </li>
+                            </li> -->
 
                             <li class="nav-item">
                                 <router-link to="/marks" class="nav-item nav-link">Marks</router-link>
