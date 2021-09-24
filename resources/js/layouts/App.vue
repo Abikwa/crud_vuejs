@@ -15,8 +15,8 @@
         </nav>
         <div class="container-fluid">
             <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background:rgb(0, 0, 165)">
-                    <div class="sidebar-sticky pt-3">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse pt-0 mt-0" style="background:rgb(0, 0, 165)">
+                    <div class="sidebar-sticky p-0 m-0">
                         <ul class="nav flex-column ">
                             <li class="nav-item">
                                 <router-link

@@ -2386,7 +2386,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -39352,12 +39351,13 @@ var render = function() {
         _c(
           "nav",
           {
-            staticClass: "col-md-3 col-lg-2 d-md-block sidebar collapse",
+            staticClass:
+              "col-md-3 col-lg-2 d-md-block sidebar collapse pt-0 mt-0",
             staticStyle: { background: "rgb(0, 0, 165)" },
             attrs: { id: "sidebarMenu" }
           },
           [
-            _c("div", { staticClass: "sidebar-sticky pt-3" }, [
+            _c("div", { staticClass: "sidebar-sticky p-0 m-0" }, [
               _c("ul", { staticClass: "nav flex-column " }, [
                 _c(
                   "li",
@@ -39579,14 +39579,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container mt-5" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [_vm._v("Home")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [_vm._v("Home Page")])
-          ])
+    return _c("div", [
+      _c("h2", { staticClass: "text-center" }, [_vm._v("Crud vue js app ")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-header" }, [_vm._v("First page")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _vm._v("\n                    text\n                ")
         ])
       ])
     ])
