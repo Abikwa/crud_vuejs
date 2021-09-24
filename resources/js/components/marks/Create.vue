@@ -1,18 +1,18 @@
 <template>
     <div>
-        <h3 class="text-center">Create mark</h3>
+        <h3 class="text-center">Creer une nouvelle marque</h3>
         <div class="row">
             <div class="col-md-6">
                 <form @submit.prevent="addmark">
                     <div class="form-group">
-                        <label>Name</label>
+                        <label>Marque</label>
                         <input type="text" class="form-control" v-model="mark.name">
                     </div>
                     <div class="form-group">
                         <label>Detail</label>
                         <input type="text" class="form-control" v-model="mark.detail">
                     </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-info">Valider</button>
                 </form>
             </div>
         </div>
