@@ -1,19 +1,18 @@
 <template>
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">Home</div>
+    <div>
+        <h2 class="text-center">Crud vue js app </h2>
+                <div class="card">
+                    <div class="card-header">First page</div>
 
-          <div class="card-body">Home Page</div>
-        </div>
-      </div>
+                    <div class="card-body">
+                        text
+                    </div>
+                </div>
     </div>
-  </div>
 </template>
 
 <script>
-export default {
-    
-}
+    export default {
+      
+    }
 </script>
