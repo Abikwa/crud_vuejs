@@ -38740,7 +38740,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Create mark")]),
+    _c("h3", { staticClass: "text-center" }, [
+      _vm._v("Creer une nouvelle marque")
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
@@ -38756,7 +38758,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Name")]),
+              _c("label", [_vm._v("Marque")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -38809,8 +38811,8 @@ var render = function() {
             _vm._v(" "),
             _c(
               "button",
-              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Create")]
+              { staticClass: "btn btn-info", attrs: { type: "submit" } },
+              [_vm._v("Valider")]
             )
           ]
         )
@@ -38842,7 +38844,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Edit mark")]),
+    _c("h3", { staticClass: "text-center" }, [_vm._v("Modifier la marque")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
@@ -38858,7 +38860,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Name")]),
+              _c("label", [_vm._v("Marque")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -38912,7 +38914,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Update")]
+              [_vm._v("Modifier")]
             )
           ]
         )
@@ -38944,7 +38946,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "text-center" }, [_vm._v("Marks ")]),
+    _c("h2", { staticClass: "text-center" }, [_vm._v("Marques ")]),
     _vm._v(" "),
     _c("table", { staticClass: "table" }, [
       _vm._m(0),
@@ -38967,25 +38969,25 @@ var render = function() {
                   _c(
                     "router-link",
                     {
-                      staticClass: "btn btn-success",
+                      staticClass: "btn btn-info text-white",
                       attrs: {
                         to: { name: "marks-edit", params: { id: mark.id } }
                       }
                     },
-                    [_vm._v("Edit")]
+                    [_vm._v("Modifier")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-danger",
+                      staticClass: "btn btn-danger text-white",
                       on: {
                         click: function($event) {
                           return _vm.deletemark(mark.id)
                         }
                       }
                     },
-                    [_vm._v("Dele")]
+                    [_vm._v("Effacer")]
                   )
                 ],
                 1
@@ -39007,7 +39009,7 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("ID")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Name mark")]),
+        _c("th", [_vm._v("Nom marque")]),
         _vm._v(" "),
         _c("th", [_vm._v("Detail")])
       ])
@@ -39351,7 +39353,7 @@ var render = function() {
           "nav",
           {
             staticClass: "col-md-3 col-lg-2 d-md-block sidebar collapse",
-            staticStyle: { "background-color": "#3f2e2c" },
+            staticStyle: { background: "rgb(0, 0, 165)" },
             attrs: { id: "sidebarMenu" }
           },
           [
@@ -39373,28 +39375,6 @@ var render = function() {
                       [
                         _c("span", { attrs: { "data-feather": "home" } }),
                         _vm._v(" Acceuil\n                            ")
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          "data-toggle": "collapse",
-                          to: { name: "about" }
-                        }
-                      },
-                      [
-                        _c("span", { attrs: { "data-feather": "biefcase" } }),
-                        _vm._v(" About\n                            ")
                       ]
                     )
                   ],
@@ -39489,10 +39469,12 @@ var staticRenderFns = [
       {
         staticClass:
           "navbar navbar-light sticky-top flex-md-nowrap p-0 shadow mt-0",
-        staticStyle: { "background-color": "#d16966" }
+        staticStyle: { "background-color": "rgb(0, 0, 125)" }
       },
       [
-        _c("span", { staticClass: "h4 text-white" }, [_vm._v("App")]),
+        _c("span", { staticClass: "h4 text-white" }, [
+          _vm._v("App vue js create")
+        ]),
         _vm._v(" "),
         _c(
           "button",
@@ -39514,8 +39496,11 @@ var staticRenderFns = [
           _c("li", { staticClass: "nav-item text-nowrap" }, [
             _c(
               "span",
-              { staticClass: "nav-link text-white", attrs: { href: "" } },
-              [_c("i"), _vm._v(" Abibi")]
+              {
+                staticClass: "nav-link text-white font-bold",
+                attrs: { href: "" }
+              },
+              [_c("i"), _vm._v(" Abibi Bat")]
             )
           ])
         ])
