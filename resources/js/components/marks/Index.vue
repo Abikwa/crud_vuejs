@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h2 class="text-center">Marks </h2>
+        <h2 class="text-center">Marques </h2>
  
         <table class="table">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Name mark</th>
+                <th>Nom marque</th>
                 <th>Detail</th>
                 <!-- <th>Actions</th> -->
             </tr>
@@ -18,8 +18,8 @@
                 <td>{{ mark.detail }}</td>
                 <td>
                     <div class="btn-group" role="group">
-                        <router-link :to="{name: 'marks-edit', params: { id: mark.id }}" class="btn btn-success">Edit</router-link>
-                        <button class="btn btn-danger" @click="deletemark(mark.id)">Dele</button>
+                        <router-link :to="{name: 'marks-edit', params: { id: mark.id }}" class="btn btn-info text-white">Modifier</router-link>
+                        <button class="btn btn-danger text-white" @click="deletemark(mark.id)">Effacer</button>
                     </div>
                 </td>
             </tr>
