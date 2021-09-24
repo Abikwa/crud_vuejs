@@ -36,8 +36,9 @@ class ModelController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['plaque'=>'required', 'mark'=>'required|unique:Modeles']);
+        $request->validate(['plaque'=>'required', 'mark'=>'required|unique:modeles']);
         Modele::create($request->all());
+        return response()->json('model created!');
     }
 
     /**
@@ -71,6 +72,7 @@ class ModelController extends Controller
      */
     public function update( Modele $model, Request $request)
     {
+        $request->validate(['plaque'=>'required', 'mark'=>'required|unique:modeles']);
         $model->update($request->all());
     }
 
